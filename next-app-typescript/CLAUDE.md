@@ -30,16 +30,29 @@
 - **Use the TodoWrite tool** during implementation to track progress within the conversation.
 
 ### 📎 Style & Conventions
-- **Use TypeScript** with strict mode enabled - no `any` types.
-- **Follow Next.js App Router conventions** for file naming and structure.
-- **Use Server Components by default**, Client Components only when needed.
-- **Tailwind CSS v4** for styling with PostCSS.
+
+#### Framework & Architecture
+- **Follow Next.js App Router conventions** for file naming and structure
+- **Use Server Components by default**, Client Components only when needed
+- **Tailwind CSS v4** for styling with PostCSS
+
+#### TypeScript Rules
+- **Use TypeScript with strict mode enabled**
+- **No explicit `any` types** - Always use proper types or `unknown` when type is truly unknown
 - **Write proper TypeScript types** for all function parameters and returns:
   ```typescript
   export async function fetchData(id: string): Promise<DataType> {
     // Implementation
   }
   ```
+- **Use optional chaining (`?.`)** and nullish coalescing (`??`) operators
+- **Exhaustive checks in switch statements** - Handle all cases or add a default
+
+#### Code Quality
+- **No unused variables** - Remove or prefix with underscore if intentionally unused (e.g., `_unusedParam`)
+- **No unused imports** - Clean up imports that aren't referenced in the file
+- **Prefer `const` over `let`** - Only use `let` when reassignment is necessary
+- **No console.log in production code** - Use proper logging utilities or remove debug statements
 
 ### 📚 Documentation & Explainability
 - **Update `README.md`** when new features are added, dependencies change, or setup steps are modified.
